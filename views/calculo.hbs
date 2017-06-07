@@ -1,0 +1,36 @@
+<form action="/calculo" method="post">
+  <label for="txtnum1">Ingrese un numero</label>
+  <input type="text" id="txtnum1" name="txtnum1" value="{{txtnum1}}">
+  <br />
+  <form action="/calculo" method="post">
+  <label for="txtnum2">Ingrese un numero</label>
+  <input type="text" id="txtnum2" name="txtnum2"
+    value="{{txtnum2}}" 
+    />
+    <br />
+
+    <script>   
+      function sumar()
+    {
+        var valor1="txtnum1";
+        var valor2="txtnum2";
+      
+        document.getElementById("total").value=parseFloat(valor1) + parseFloat(valor2);
+    } </script>
+     
+     <br>
+     <div>Total: <input type="text" id="total" disabled value="0">
+
+    <input type="submit" value="sumar" id="btnSubmit"
+      name="btnSubmit"/>
+</form>
+<div>
+  <ul>
+    {{#each suma}}
+      <li>
+        {{this}}
+      </li>
+      {{/each}}
+  </ul>
+
+</div>
