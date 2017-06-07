@@ -19,4 +19,26 @@ router.get('/api/datos', function(req,res,next){
 
 });
 
+
+
+router.get('/calculo', function(req,res,next){
+  res.render('calculo',{"suma":"","resultado":""});
+});
+var calculosR = [];
+
+router.post('/calculo',function(req,res,next){
+  console.log(req.body);
+    calculosR.push(req.body.txtnum1,req.body.txtnum2,req.body.result);
+    var msgs = calculosR;
+    var rtObject = {};
+    var rtObject2 = {};
+    var result = {};
+    
+    rtObject.txtnum1 = req.body.txtnum1;
+    rtObject2.txtnum2 = req.body.txtnum2;
+
+    result.msg= msgs;
+
+});
+
 module.exports = router;
